@@ -233,7 +233,7 @@
           "entry": {
             "type": "string",
             "title": "Entry",
-            "description": "The javascript entry point for tests, only works if types has been set to `javascript`."
+            "description": "The entry file for the pack's scripts."
           }
         },
         "if": {
@@ -241,9 +241,9 @@
             "type": { "const": "script" }
           }
         },
-        "then": { "required": ["language"] },
+        "then": { "required": ["language", "entry"] },
         "else": {
-          "not": { "required": ["language"] }
+          "not": { "required": ["language", "entry"] }
         }
       }
     },
